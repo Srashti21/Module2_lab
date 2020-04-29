@@ -1,0 +1,49 @@
+<!--data is local template variable-->
+<div align="center">
+<form  #data="ngForm"  
+(ngSubmit)="addEmployee(data)">
+<h1>Add Employee</h1>
+    <div>   
+    <label>Name</label><br>
+     <input  type="text" ngModel name="name" [(ngModel)]="inputText">
+    </div>
+
+    <div>
+    
+    <label>Id</label><br>
+    <input type="number" ngModel name="id"  [(ngModel)]="inputId">
+    </div>    
+    
+    <div>
+    
+        <label>Salary</label><br>
+        <input type="number" ngModel name="salary" [(ngModel)]="inputSalary">
+        </div>
+    
+        <div>
+    
+            <label>Department</label><br>
+            <input type="text" ngModel name="department" [(ngModel)]="inputDepartment">
+            </div>
+    <input type="submit" value="submit" >
+           
+</form>
+
+ {{inputText}} {{inputId}} {{inputSalary}} {{inputDepartment}}
+</div>
+<div *ngIf="addedEmp!==null">
+<h3 align="center">Employee Added</h3>  
+ 
+ <dialog open id="myFirstDialog"  style="align-content: flex-start; width: 50%; height: 30%;">
+   <h3>Details</h3>
+    Name= {{addedEmp.empName}}<br>
+    Id={{addedEmp.empId}}<br>
+    Salary={{addedEmp.empSalary}}<br>
+    Department={{addedEmp.empDepartment}}
+</dialog>
+
+</div>
+
+
+
+   
